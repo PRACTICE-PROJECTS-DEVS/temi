@@ -15,9 +15,10 @@ const About = () => {
                 <Info />
 
                 <p className="about__description">
-                    Frontend developer, I create web pages with UI / UX user interface, I have years of experience and many clients are happy with the projects carried out.
-                    I use skills such as Php, MySql, Javascript, React, Html, Css, Java.
-                    I am always happy and ready to bring a project to life
+                    Fullstack Developer, with 3 years of experience building applications that suite the needs of the client.
+                    I am a passionate developer with a strong background in web development.
+                    I have a strong understanding of the software development life cycle and agile methodologies.
+                    I am always looking for new challenges and opportunities to learn and grow.
                 </p>
             </div>
         </div>
