@@ -193,6 +193,13 @@ app.use((err, req, res, next) => {
   res.status(400).json({ error: err.message });
 });
 
+// Serve static React build files in production
+const buildPath = path.join(__dirname, '../build');
+app.use(express.static(buildPath));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(buildPath, 'index.html'));
+});
+
 // Start Server
 app.listen(PORT, () => {
   console.log(`Express Backend Server is running on port ${PORT}`);
