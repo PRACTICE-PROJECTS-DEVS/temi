@@ -35,6 +35,7 @@ const Contact = () => {
                 href="mailto:nifetemiboy@gmail.com"
                 className="contact-button"
                 target="_blank"
+                rel="noreferrer"
               >
                 Write me{" "}
                 <i className="bx bx-right-arrow-alt contact-button-icon"></i>
@@ -48,6 +49,7 @@ const Contact = () => {
                 href="https://wa.me/2347065080140/"
                 className="contact-button"
                 target="_blank"
+                rel="noreferrer"
               >
                 Write me{" "}
                 <i className="bx bx-right-arrow-alt contact-button-icon"></i>
@@ -60,6 +62,7 @@ const Contact = () => {
                 href='https://drive.google.com/file/d/1bNokGj8pXuI9b12BYI_0wbdKM-_kaTTx/view?usp=drive_link'
                 className="contact-button"
                 target="_blank"
+                rel="noreferrer"
               >
                 Download now{" "}
                 <i className="bx bx-right-arrow-alt contact-button-icon"></i>
