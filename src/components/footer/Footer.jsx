@@ -45,7 +45,7 @@ const Footer = () => {
               </a>
             </div>
             <span className="footer-copy">
-                 Temi.Dev . All rights reserved &#169; 2023
+                 Temi.Dev . All rights reserved &#169; 2025
             </span>
           </div>
         </footer>
