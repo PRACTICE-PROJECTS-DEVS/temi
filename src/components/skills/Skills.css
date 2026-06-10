@@ -1,83 +1,134 @@
+/*=============== SKILLS STYLING REDESIGN ===============*/
+
 .skills-container {
-    grid-template-columns: repeat(2, 450px);
-    column-gap: 3rem;
-    justify-content: center;
-  }
-  
-  .skills-content {
-    background-color: var(--container-color);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 2rem 2rem;
-    border-radius: 1.25rem;
-  }
-  
-  .skills-title {
-    font-size: var(--normal-font-size);
-    font-weight: var(--font-medium);
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    max-width: 968px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.skills-content {
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid var(--border-color);
+    padding: 2.25rem 2.5rem;
+    border-radius: 1.5rem;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Accent Hover Glows: Indigo/Blue for Frontend, Emerald/Teal for Backend */
+.skills-content:first-child:hover {
+    border-color: rgba(99, 102, 241, 0.3);
+    box-shadow: 0 15px 35px rgba(99, 102, 241, 0.12);
+    transform: translateY(-4px);
+}
+
+.skills-content:last-child:hover {
+    border-color: rgba(16, 185, 129, 0.3);
+    box-shadow: 0 15px 35px rgba(16, 185, 129, 0.12);
+    transform: translateY(-4px);
+}
+
+.skills-title {
+    font-size: var(--h3-font-size);
+    font-family: var(--title-font);
+    font-weight: var(--font-semi-bold);
     text-align: center;
-    margin-bottom: var(--mb-1-5);
-  }
-  
-  .skills-box {
-    display: flex;
-    justify-content: center;
-    column-gap: 2.5rem;
-  }
-  
-  .skills-group {
-    display: grid;
-    align-items: flex-start;
-    row-gap: 1rem;
-  }
-  
-  .skills-data {
-    display: flex;
-    column-gap: 0.5rem;
-  }
-  
-  .skills .bx-badge-check {
-    font-size: 1rem;
+    margin-bottom: 2rem;
     color: var(--title-color);
-  }
-  
-  .skills-name {
-    font-size: var(--normal-font-size);
+}
+
+.skills-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.875rem;
+    justify-content: center;
+}
+
+.skills-group {
+    display: contents; /* Allows direct wrapping of children within skills-box */
+}
+
+.skills-data {
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 0.625rem 1rem;
+    border-radius: 0.875rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skills-data:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-2px);
+}
+
+.skills-content:first-child .skills-data:hover {
+    border-color: rgba(99, 102, 241, 0.25);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
+}
+
+.skills-content:last-child .skills-data:hover {
+    border-color: rgba(16, 185, 129, 0.25);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
+}
+
+.skills-data i {
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.skills-content:first-child .skills-data i {
+    color: var(--primary-color);
+}
+
+.skills-content:last-child .skills-data i {
+    color: #10b981;
+}
+
+.skills-data:hover i {
+    transform: scale(1.15);
+}
+
+.skills-name {
+    font-size: var(--small-font-size);
     font-weight: var(--font-medium);
-    line-height: 18px;
-  }
-  
-  .skills-level {
+    color: var(--title-color);
+    line-height: 1.2;
+}
+
+.skills-level {
     font-size: var(--tiny-font-size);
-  }
-  
-  /* BREAKPOINTS */
-  /* Large Screens */
-  @media screen and (max-width: 992px) {
+    color: var(--text-color);
+    display: block;
+    margin-top: 0.1rem;
+}
+
+/*=============== RESPONSIVENESS ===============*/
+
+@media screen and (max-width: 992px) {
     .skills-container {
-      grid-template-columns: max-content;
-      row-gap: 2rem;
+        grid-template-columns: 1fr;
+        row-gap: 2rem;
+        max-width: 500px;
     }
-  }
-  
-  /* For medium devices */
-  @media screen and (max-width: 500px) {
-    .skills-container {
-      grid-template-columns: 1fr;
-    }
-  
+}
+
+@media screen and (max-width: 500px) {
     .skills-content {
-      padding: 1.5rem;
+        padding: 1.5rem;
     }
-  }
-  
-  /* For small devices */
-  @media screen and (max-width: 350px) {
+    
     .skills-box {
-      column-gap: 1.25rem;
+        gap: 0.75rem;
     }
-  
-    .skills-name {
-      font-size: var(--small-font-size);
+    
+    .skills-data {
+        padding: 0.5rem 0.75rem;
     }
-  }
-  
+}

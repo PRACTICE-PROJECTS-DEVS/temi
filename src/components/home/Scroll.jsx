@@ -1,9 +1,17 @@
 import React from 'react'
 
 const Scroll = () => {
+  const handleScrollClick = (e) => {
+    e.preventDefault();
+    const element = document.getElementById('about');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="home__scroll">
-        <a href="#about" className="home__scroll-button button--flex">
+        <a href="#/" onClick={handleScrollClick} className="home__scroll-button button--flex">
         <svg
                 width="32px"
                 height="32px"

@@ -8,12 +8,12 @@ const Footer = () => {
             <h1 className="footer-title">Temi.Dev</h1>
             <ul className="footer-list">
               <li>
-                <a href="#about" className="footer-link">
+                <a href="#/" onClick={(e) => { e.preventDefault(); const el = document.getElementById('about'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }} className="footer-link">
                   About
                 </a>
               </li>
               <li>
-                <a href="#portfolio" className="footer-link">
+                <a href="#/" onClick={(e) => { e.preventDefault(); const el = document.getElementById('portfolio'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }} className="footer-link">
                   Projects
                 </a>
               </li>

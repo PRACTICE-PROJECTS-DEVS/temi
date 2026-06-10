@@ -1,40 +1,51 @@
 /*=============== GOOGLE FONTS ===============*/
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Poppins:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 /*=============== VARIABLES CSS ===============*/
 :root {
-  --header-height: 3rem;
+  --header-height: 4.5rem;
 
   /*========== Colors ==========*/
-  /*Color mode HSL(hue, saturation, lightness)*/
-  --hue: 0;
-  --sat: 0%;
-  --title-color: hsl(var(--hue), var(--sat), 20%);
-  --title-color-dark: hsl(var(--hue), var(--sat), 0%);
-  --text-color: hsl(var(--hue), var(--sat), 46%);
-  --body-color: hsl(var(--hue), var(--sat), 98%);
-  --container-color: #fff;
+  /* Ultra-Premium Cyber Dark Palette */
+  --body-color: #030712;
+  --bg-gradient: radial-gradient(circle at 50% 0%, #0f172a 0%, #030712 100%);
+  --container-color: rgba(15, 23, 42, 0.45);
+  --border-color: rgba(255, 255, 255, 0.05);
+  --border-hover: rgba(99, 102, 241, 0.25);
+  
+  --title-color: #f8fafc;
+  --title-color-dark: #fff;
+  --text-color: #94a3b8;
+  
+  /* Accent Colors & Gradients */
+  --primary-color: #6366f1;
+  --primary-glow: rgba(99, 102, 241, 0.35);
+  --secondary-color: #818cf8;
+  --accent-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+  --accent-gradient-hover: linear-gradient(135deg, #4f46e5 0%, #9333ea 100%);
+  --emerald-gradient: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
 
   /*========== Font and typography ==========*/
   --body-font: "Poppins", sans-serif;
+  --title-font: "Outfit", sans-serif;
 
-  /*.5rem = 8px | 1rem = 16px ...*/
+  /* Font sizes */
   --big-font-size: 3.5rem;
-  --h1-font-size: 2.25rem;
-  --h2-font-size: 1.5rem;
+  --h1-font-size: 2.5rem;
+  --h2-font-size: 1.75rem;
   --h3-font-size: 1.25rem;
   --normal-font-size: 1rem;
   --small-font-size: 0.875rem;
   --smaller-font-size: 0.813rem;
-  --tiny-font-size: 0.625rem;
+  --tiny-font-size: 0.688rem;
 
   /*========== Font weight ==========*/
   --font-normal: 400;
   --font-medium: 500;
   --font-semi-bold: 600;
+  --font-bold: 700;
 
-  /*========== Margenes Bottom ==========*/
-  /*.5rem = 8px | 1rem = 16px ...*/
+  /*========== Spacing ==========*/
   --mb-0-25: 0.25rem;
   --mb-0-5: 0.5rem;
   --mb-0-75: 0.75rem;
@@ -54,9 +65,9 @@
 @media screen and (max-width: 992px) {
   :root {
     --big-font-size: 2.75rem;
-    --h1-font-size: 1.5rem;
-    --h2-font-size: 1.25rem;
-    --h3-font-size: 1rem;
+    --h1-font-size: 2rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.125rem;
     --normal-font-size: 0.938rem;
     --small-font-size: 0.813rem;
     --smaller-font-size: 0.75rem;
@@ -74,24 +85,49 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #030712;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.2);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.4);
+}
+
 body,
 button,
 input,
-textarea {
+textarea,
+select {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
+  background: none;
+  border: none;
 }
 
 body {
   background-color: var(--body-color);
+  background-image: var(--bg-gradient);
+  background-attachment: fixed;
   color: var(--text-color);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1,
 h2,
 h3 {
   color: var(--title-color);
+  font-family: var(--title-font);
   font-weight: var(--font-semi-bold);
+  letter-spacing: -0.02em;
 }
 
 ul {
@@ -104,41 +140,52 @@ a {
 
 button {
   cursor: pointer;
-  border: none;
   outline: none;
 }
 
 img {
   max-width: 100%;
   height: auto;
+  display: block;
 }
 
 /*=============== REUSABLE CSS CLASSES ===============*/
 .section {
-  padding: 6rem 0 2rem;
+  padding: 6.5rem 0 2.5rem;
 }
 
 .section__title {
   font-size: var(--h1-font-size);
   color: var(--title-color);
+  margin-bottom: 0.5rem;
 }
 
-.section__subtitle {
+.section-title {
+  font-size: var(--h1-font-size);
+  color: var(--title-color);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.section__subtitle,
+.section-subtitle {
   display: block;
   font-size: var(--small-font-size);
-  margin-bottom: 4rem;
-}
-
-.section__title,
-.section__subtitle {
+  color: var(--primary-color);
+  margin-bottom: 3.5rem;
   text-align: center;
+  font-weight: var(--font-medium);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 /*=============== LAYOUT ===============*/
 .container {
-  max-width: 968px;
+  max-width: 1024px;
   margin-left: auto;
   margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .grid {
@@ -148,20 +195,33 @@ img {
 
 /*=============== BUTTONS ===============*/
 .button {
-  display: inline-block;
-  background-color: var(--title-color);
-  color: var(--container-color);
-  padding: 1.25rem 2rem;
-  border-radius: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 0.95rem 1.8rem;
+  border-radius: 0.75rem;
   font-weight: var(--font-medium);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 14px var(--primary-glow);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button:hover {
-  background-color: var(--title-color-dark);
+  background-color: #4f46e5;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
 }
 
 .button__icon {
   margin-left: var(--mb-0-5);
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.button:hover .button__icon {
+  transform: translateX(4px);
 }
 
 .button--flex {
@@ -169,50 +229,45 @@ img {
   align-items: center;
 }
 
+/* Glassmorphism Panel Helper */
+.glass-panel {
+  background: var(--container-color);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  border-radius: 1.25rem;
+}
+
 /*=============== BREAKPOINTS ===============*/
-/* For large devices */
 @media screen and (max-width: 992px) {
   .container {
-    margin-left: var(--mb-1-5);
-    margin-right: var(--mb-1-5);
-  }
-
-  .button {
-    padding: 1rem 1.75rem;
-  }
-
-  .button__icon {
-    width: 22px;
-    height: 22px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 }
 
-/* For medium devices */
 @media screen and (max-width: 768px) {
   body {
     margin: 0 0 var(--header-height) 0;
   }
 
   .section {
-    padding: 2rem 0 4rem;
+    padding: 4.5rem 0 2rem;
   }
 
-  .section__subtitle {
-    margin-bottom: var(--mb-3);
+  .section__subtitle,
+  .section-subtitle {
+    margin-bottom: var(--mb-2-5);
   }
 }
 
-@media screen and (max-width: 576px) {
-}
-
-/* For small devices */
 @media screen and (max-width: 350px) {
   :root {
     --big-font-size: 2.25rem;
   }
 
   .container {
-    margin-left: var(--mb-1);
-    margin-right: var(--mb-1);
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }

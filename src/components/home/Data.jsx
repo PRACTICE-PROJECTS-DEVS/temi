@@ -3,7 +3,7 @@ import React from 'react'
 const Data = () => {
   return (
     <div className="home__data">
-        <h1 className="home__title">Akanbi-Bello Temidayo
+        <h1 className="home__title">Akanbi-Bello <span className="text-gradient">Temidayo</span>
             <svg
                     width="36"
                     height="36"
@@ -58,7 +58,7 @@ const Data = () => {
         <h3 className="home__subtitle">Full Stack Developer</h3>
         <p className="home__description">I am a developer based in Lagos, Nigeria. I love building software applications and  always ready to take on a task </p>
 
-        <a href="#contact" className="button button--flex">
+        <a href="#/" onClick={(e) => { e.preventDefault(); const el = document.getElementById('contact'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }} className="button button--flex">
             Drop a message  
             <svg
                   class="button__icon"
